@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	@apply bg-light;
+	@apply bg-light2;
 }
 
 .sched-container {
