@@ -16,7 +16,10 @@ const Scheds = () => {
 		}
 	}, [schedules]);
 	useEffect(() => {
-		setSchedules(JSON.parse(localStorage.getItem("data")));
+		const data = JSON.parse(localStorage.getItem("data"));
+		data
+			? setSchedules(JSON.parse(localStorage.getItem("data")))
+			: setSchedules([]);
 	}, []);
 	return (
 		<div className="flex flex-col justify-center items-center text-light">
