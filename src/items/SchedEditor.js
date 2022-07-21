@@ -66,13 +66,13 @@ const Editor = ({ sched, cancelEdit, saveEdit }) => {
 		<div className="flex flex-col justify-center items-center text-light">
 			<div className="w-full bg-dark flex justify-center items-center py-3 z-20">
 				<label
-					className=" text-lg font-bold absolute left-5 text-red-500 hover:underline"
+					className=" text-lg font-bold absolute left-5 text-red-300 hover:underline"
 					onClick={cancelEdit}
 				>
 					cancel
 				</label>
 				<label
-					className=" text-lg font-bold absolute right-5 text-green-400 hover:underline"
+					className=" text-lg font-bold absolute right-5 text-primary-200 hover:underline"
 					onClick={() => {
 						saveEdit(SchedEditing);
 					}}
