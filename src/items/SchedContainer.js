@@ -12,11 +12,13 @@ const SchedContainer = ({ sched, edit }) => {
 			</label>
 			<label className=" text-center font-semibold">
 				Today's Events{" "}
-				<label className=" text-primary-100">{sched.events.length}</label>
+				<label className=" text-primary-100">
+					{sched.events?.filter((item) => item.day === "Mon").length}
+				</label>
 			</label>
 			<label className=" text-center font-semibold ">
-				<label className=" text-primary-100">{sched.events.length}</label> Total
-				Events
+				<label className=" text-primary-100">{sched.events?.length}</label>{" "}
+				Total Events
 			</label>
 		</div>
 	);

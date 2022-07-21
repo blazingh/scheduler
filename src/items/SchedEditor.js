@@ -94,7 +94,7 @@ const Editor = ({ sched, cancelEdit, saveEdit, delEdit }) => {
 				{days.map((day) => (
 					<label
 						key={day}
-						className={`peer w-full text-center py-2 select-none ${
+						className={` relative peer w-full text-center py-2 select-none ${
 							selectedDay === day
 								? " bg-secondary-100 px-5 out-inline-shadow z-10"
 								: " bg-middle in-b-shadow"
@@ -105,6 +105,13 @@ const Editor = ({ sched, cancelEdit, saveEdit, delEdit }) => {
 						}}
 					>
 						{day}
+						<label
+							className={` font-bold text-xs top-1 w-4 h-4 absolute  ${
+								selectedDay === day ? " text-secondary-200" : " text-middle2"
+							}`}
+						>
+							{sched.events.filter((item) => item.day === day).length}
+						</label>
 					</label>
 				))}
 			</div>
@@ -157,7 +164,9 @@ const Editor = ({ sched, cancelEdit, saveEdit, delEdit }) => {
 								eventEditing={eventEditing}
 								eventChange={handleEventChange}
 								eventSave={handleEventSave}
-								eventDel={handleEventDel}
+								eventDel={() => {
+									setEventEditing();
+								}}
 							/>
 						) : (
 							<label>finish editing before adding a new event</label>

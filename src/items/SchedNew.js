@@ -8,7 +8,12 @@ const SchedNew = ({ schedules, newSchedule }) => {
 				</label>
 			</div>
 			<div className="peer-checked:flex hidden items-center col-span-2 row-span-2 justify-around ">
-				<label className="button-style" onClick={newSchedule}>
+				<label
+					className="button-style"
+					onClick={() => {
+						newSchedule();
+					}}
+				>
 					New Schedule
 				</label>
 				<div className="flex relative">
@@ -22,8 +27,12 @@ const SchedNew = ({ schedules, newSchedule }) => {
 					<div className="bg-secondary-100 absolute peer-checked:flex hidden z-10 right-0 top-7 w-40  text-white rounded flex-col justify-center items-center rounded-tr-none">
 						{schedules.map((sched) => (
 							<label
+								htmlFor="list"
 								key={sched.id}
 								className="py-1 cursor-pointer hover:bg-secondary-200 w-full text-center"
+								onClick={() => {
+									newSchedule(sched);
+								}}
 							>
 								{sched.name}
 							</label>

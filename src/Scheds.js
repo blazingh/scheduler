@@ -6,10 +6,18 @@ import SchedNew from "./items/SchedNew";
 const Scheds = () => {
 	const [schedules, setSchedules] = useState([]);
 	const [editing, setEditing] = useState();
-	const handleNewSched = () => {
+	const handleNewSched = (dup) => {
 		let newId = 1;
 		while (schedules.findIndex((sched) => sched.id === newId) != -1) {
 			newId++;
+		}
+		if (dup) {
+			console.log(dup);
+			let dupSched = { ...dup };
+			dupSched.name += " duplicate";
+			dupSched.id = newId;
+			setSchedules((current) => [...current, dupSched]);
+			return;
 		}
 		setSchedules((current) => [
 			...current,
@@ -42,6 +50,7 @@ const Scheds = () => {
 
 	useEffect(() => {
 		if (schedules.length > 0) {
+			console.log(schedules);
 			localStorage.setItem("data", JSON.stringify(schedules));
 		}
 	}, [schedules]);

@@ -7,7 +7,7 @@ body {
 }
 
 .sched-container {
-	@apply grid grid-cols-2 grid-rows-2 mt-3 py-3 w-full bg-dark  rounded-md h-28;
+	@apply grid grid-cols-2 grid-rows-2 mt-3 py-3 w-full bg-dark rounded-md;
 }
 
 .button-style {
