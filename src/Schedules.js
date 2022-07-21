@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import Editor from "./items/SchedEditor";
+import SchedEditor from "./items/SchedEditor";
 import SchedContainer from "./items/SchedContainer";
-import SchedNew from "./items/SchedNew";
+import NewSchedContainer from "./items/NewSchedContainer";
 
-const Scheds = () => {
-	const today = new Date();
+const Schedules = () => {
 	const [schedules, setSchedules] = useState([]);
 	const [editing, setEditing] = useState();
 	const handleNewSched = (dup) => {
@@ -38,15 +37,14 @@ const Scheds = () => {
 		setSchedules(newArray);
 		setEditing();
 	};
-	const handleDelEdit = (delSched) => {
+	const handleDelEdit = (id) => {
 		let newArray = [...schedules];
-		const index = schedules.findIndex((sched) => sched.id === delSched.id);
+		const index = schedules.findIndex((sched) => sched.id === id);
 		newArray.splice(index, 1);
 		if (newArray.length === 0) {
 			localStorage.removeItem("data");
 		}
 		setSchedules(newArray);
-		setEditing();
 	};
 
 	useEffect(() => {
@@ -60,11 +58,10 @@ const Scheds = () => {
 		data ? setSchedules(JSON.parse(data)) : setSchedules([]);
 	}, []);
 	return editing ? (
-		<Editor
+		<SchedEditor
 			sched={editing}
 			cancelEdit={handleCancelEdit}
 			saveEdit={handleSaveEdit}
-			delEdit={handleDelEdit}
 		/>
 	) : (
 		<div className="flex flex-col justify-center items-center text-light">
@@ -73,12 +70,17 @@ const Scheds = () => {
 			</div>
 			<div className="flex flex-col justify-center items-center w-full max-w-md px-3">
 				{schedules.map((sched) => (
-					<SchedContainer sched={sched} edit={handleEdit} key={sched.id} />
+					<SchedContainer
+						sched={sched}
+						edit={handleEdit}
+						delSched={handleDelEdit}
+						key={sched.id}
+					/>
 				))}
-				<SchedNew schedules={schedules} newSchedule={handleNewSched} />
+				<NewSchedContainer schedules={schedules} newSchedule={handleNewSched} />
 			</div>
 		</div>
 	);
 };
 
-export default Scheds;
+export default Schedules;

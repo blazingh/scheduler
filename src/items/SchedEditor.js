@@ -2,7 +2,7 @@ import { toHaveDisplayValue } from "@testing-library/jest-dom/dist/matchers";
 import { useEffect, useState } from "react";
 import EventEditor from "./EventEditor";
 
-const Editor = ({ sched, cancelEdit, saveEdit, delEdit }) => {
+const Editor = ({ sched, cancelEdit, saveEdit }) => {
 	const today = new Date();
 	const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 	const [selectedDay, setSelectedDay] = useState(days[today.getDay() - 1]);
@@ -65,24 +65,19 @@ const Editor = ({ sched, cancelEdit, saveEdit, delEdit }) => {
 	return (
 		<div className="flex flex-col justify-center items-center text-light">
 			<div className="w-full bg-dark flex justify-center items-center py-3 z-20">
-				<label className=" absolute left-5" onClick={cancelEdit}>
+				<label
+					className=" text-lg font-bold absolute left-5 text-red-500 hover:underline"
+					onClick={cancelEdit}
+				>
 					cancel
 				</label>
 				<label
-					className=" absolute right-5"
+					className=" text-lg font-bold absolute right-5 text-green-400 hover:underline"
 					onClick={() => {
 						saveEdit(SchedEditing);
 					}}
 				>
 					save
-				</label>
-				<label
-					className=" absolute right-20"
-					onClick={() => {
-						delEdit(SchedEditing);
-					}}
-				>
-					delete
 				</label>
 				<input
 					className="text-xl font-semibold text-center bg-dark"

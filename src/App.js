@@ -1,9 +1,9 @@
-import Scheds from "./Scheds";
+import Schedules from "./Schedules";
 
 function App() {
 	return (
 		<div>
-			<Scheds />
+			<Schedules />
 		</div>
 	);
 }

@@ -1,4 +1,4 @@
-const SchedNew = ({ schedules, newSchedule }) => {
+const NewSchedContainer = ({ schedules, newSchedule }) => {
 	return (
 		<div className="sched-container">
 			<input type="checkbox" id="add-button" className=" peer hidden" />
@@ -44,4 +44,4 @@ const SchedNew = ({ schedules, newSchedule }) => {
 	);
 };
 
-export default SchedNew;
+export default NewSchedContainer;
