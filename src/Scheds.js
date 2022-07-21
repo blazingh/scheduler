@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Editor from "./items/Editor";
+import Editor from "./items/SchedEditor";
 import SchedContainer from "./items/SchedContainer";
 import SchedNew from "./items/SchedNew";
 
@@ -7,15 +7,13 @@ const Scheds = () => {
 	const [schedules, setSchedules] = useState([]);
 	const [editing, setEditing] = useState();
 	const handleNewSched = () => {
-		const index = schedules.length;
-		if (index < 1) {
-			setSchedules([{ id: 1, name: `New Schedule 1`, events: [] }]);
-			return;
+		let newId = 1;
+		while (schedules.findIndex((sched) => sched.id === newId) != -1) {
+			newId++;
 		}
-		const schedId = schedules[index - 1].id + 1;
 		setSchedules((current) => [
 			...current,
-			{ id: schedId, name: `New Schedule ${index + 1}`, events: [] },
+			{ id: newId, name: `New Schedule ${newId}`, events: [] },
 		]);
 	};
 	const handleEdit = (id) => {
