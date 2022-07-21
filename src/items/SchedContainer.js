@@ -1,4 +1,6 @@
 const SchedContainer = ({ sched, edit }) => {
+	const today = new Date();
+	const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 	return (
 		<div
 			className="sched-container"
@@ -13,7 +15,11 @@ const SchedContainer = ({ sched, edit }) => {
 			<label className=" text-center font-semibold">
 				Today's Events{" "}
 				<label className=" text-primary-100">
-					{sched.events?.filter((item) => item.day === "Mon").length}
+					{
+						sched.events?.filter(
+							(item) => item.day === days[today.getDay() - 1],
+						).length
+					}
 				</label>
 			</label>
 			<label className=" text-center font-semibold ">

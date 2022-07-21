@@ -1,9 +1,11 @@
+import { toHaveDisplayValue } from "@testing-library/jest-dom/dist/matchers";
 import { useEffect, useState } from "react";
 import EventEditor from "./EventEditor";
 
 const Editor = ({ sched, cancelEdit, saveEdit, delEdit }) => {
+	const today = new Date();
 	const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-	const [selectedDay, setSelectedDay] = useState("Mon");
+	const [selectedDay, setSelectedDay] = useState(days[today.getDay() - 1]);
 	const [SchedEditing, setSchedEditing] = useState(sched);
 	const [eventEditing, setEventEditing] = useState();
 

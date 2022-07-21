@@ -4,6 +4,7 @@ import SchedContainer from "./items/SchedContainer";
 import SchedNew from "./items/SchedNew";
 
 const Scheds = () => {
+	const today = new Date();
 	const [schedules, setSchedules] = useState([]);
 	const [editing, setEditing] = useState();
 	const handleNewSched = (dup) => {
