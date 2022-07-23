@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+### Your persenol Weekly Schedule
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- create as many weekly schedules as you want
+- daily events can be created edited and sorted by time
+- data is stored on your local storage
+- feel fre to give any sugesuggestions  for fixes or new features 
 
-## Available Scripts
+# How to use
 
-In the project directory, you can run:
+clone this repo and instal dependences and run with " npm start "
 
-### `npm start`
+or visit this site for demo : https://scheduler-livid.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1) create your schedule (you can deplicate an already existing schedule)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://user-images.githubusercontent.com/8129122/180615938-06c778d1-b639-45dd-929b-e3b85287c2c3.png)
 
-### `npm test`
+![image](https://user-images.githubusercontent.com/8129122/180615956-d9554124-f12a-411a-859a-0a9f8680d334.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2) hover over the schedule you created and press edit
 
-### `npm run build`
+![image](https://user-images.githubusercontent.com/8129122/180615966-514240f2-63a6-41a0-98b6-e8209c416ed2.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3) choose the day you want to add event to
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://user-images.githubusercontent.com/8129122/180616125-0fae4654-5372-4f85-afa3-8153bdfe0c03.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4) press add and enter the event name, note and time (name and note are optinal)
 
-### `npm run eject`
+![image](https://user-images.githubusercontent.com/8129122/180616134-c3d66283-a830-4d45-807e-0480f57040b6.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![image](https://user-images.githubusercontent.com/8129122/180616142-d1963d98-8ae5-4287-9ba3-c63f71c7f964.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5) press save to add your event to schedule (events are automaticly sorted by time)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6) your can press on any event to edit its name, note or change time
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+7) you can rename the schedual by pressing on the scheduale name
 
-## Learn More
+![image](https://user-images.githubusercontent.com/8129122/180616169-c4f0f660-62f0-40ab-bc73-cbdddb78dffc.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+8) don't forget to press save on the top right corner when done adding events 
