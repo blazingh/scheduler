@@ -40,3 +40,6 @@ or visit this site for demo : https://scheduler-livid.vercel.app/
 ![image](https://user-images.githubusercontent.com/8129122/180616169-c4f0f660-62f0-40ab-bc73-cbdddb78dffc.png)
 
 8) don't forget to press save on the top right corner when done adding events 
+
+![image](https://user-images.githubusercontent.com/8129122/180616198-42de5626-c4f0-4aab-b4f1-c3be89ec9c8b.png)
+
